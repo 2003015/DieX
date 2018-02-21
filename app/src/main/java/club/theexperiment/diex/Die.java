@@ -1,7 +1,5 @@
 package club.theexperiment.diex;
 
-import java.util.Random;
-
 public abstract class Die {
 
     private int sides;
@@ -29,6 +27,7 @@ public abstract class Die {
     }
 
     public void roll() {
+        int[this.sides] rolls = 0;
         int i = 0;
         while (i < this.numberOfDice) {
             Random rand = new Random();
