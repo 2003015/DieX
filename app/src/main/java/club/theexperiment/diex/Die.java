@@ -1,5 +1,7 @@
 package club.theexperiment.diex;
 
+import java.util.Random;
+
 public abstract class Die {
 
     private int sides;
