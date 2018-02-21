@@ -29,7 +29,7 @@ public abstract class Die {
     }
 
     public void roll() {
-        int[this.sides] rolls = 0;
+        int[] rolls = new int[this.sides];
         int i = 0;
         while (i < this.numberOfDice) {
             Random rand = new Random();
