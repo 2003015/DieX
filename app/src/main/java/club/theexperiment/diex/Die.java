@@ -6,7 +6,7 @@ public abstract class Die {
 
     private int sides;
     private int numberOfDice;
-
+    private Random rand = new Random();
     public Die() {
         sides = 0;
         numberOfDice = 0;
@@ -32,7 +32,7 @@ public abstract class Die {
         int[] rolls = new int[this.sides];
         int i = 0;
         while (i < this.numberOfDice) {
-            Random rand = new Random();
+
 
             int n = rand.nextInt(this.sides) + 1;
 
