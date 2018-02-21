@@ -35,6 +35,8 @@ public abstract class Die {
             Random rand = new Random();
 
             int n = rand.nextInt(this.sides) + 1;
+
+            rolls[i] = n;
         }
     }
 }
