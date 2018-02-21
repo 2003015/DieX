@@ -27,6 +27,6 @@ public abstract class Die {
     }
 
     public void roll() {
-
+        int[this.sides] rolls = 0;
     }
 }
