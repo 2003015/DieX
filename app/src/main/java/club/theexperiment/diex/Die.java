@@ -8,6 +8,7 @@ public abstract class Die {
     private int numberOfDice;
     private Random rand = new Random();
     private int total;
+    private int[] rolls;
     public Die() {
         sides = 0;
         numberOfDice = 0;
@@ -29,8 +30,12 @@ public abstract class Die {
         this.numberOfDice = numberOfDice;
     }
 
+    public int getTotal() {return total;}
+
+    public int[] getRolls() {return rolls;}
+
     public void roll() {
-        int[] rolls = new int[this.sides];
+        rolls = new int[this.sides];
         for(int x : rolls){
             rolls[x] = 0;
         }
