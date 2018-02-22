@@ -1,4 +1,4 @@
 package club.theexperiment.diex;
 
-public class d4 {
+public class d4 extends Die {
 } 
