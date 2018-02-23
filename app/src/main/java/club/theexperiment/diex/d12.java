@@ -2,7 +2,8 @@ package club.theexperiment.diex;
 
 public class d12 extends Die {
     public d12(int r) {
-        int sides = 12;
+        setSides(12);
+        setNumberOfDice(r);
 
     }
 } 
