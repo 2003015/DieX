@@ -2,6 +2,7 @@ package club.theexperiment.diex;
 
 import android.content.Intent;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,12 +17,14 @@ public class MainActivity extends AppCompatActivity {
 
         Fragment contentFragment = null;
 
-        Button btn = findViewById(R.id.your_button_id);
-        btn.setOnClickListener(new View.OnClickListener() {
+        Button mD2Button = (Button) findViewById(R.id.d2Button);
+        mD2Button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, new d2Fragment());
+                ft.commit();
             }
 
         }
