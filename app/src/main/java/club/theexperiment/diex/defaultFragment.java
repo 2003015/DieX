@@ -23,7 +23,7 @@ public class defaultFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.w("d2","Fire1");
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
                 Log.w("d2","Fire2");
                 ft.replace(R.id.content_frame, new d2Fragment());
                 Log.w("d2","Fire3");
