@@ -22,13 +22,9 @@ public class defaultFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                Log.w("d2","Fire1");
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                Log.w("d2","Fire2");
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.content_frame, new d2Fragment());
-                Log.w("d2","Fire3");
                 ft.commit();
-                Log.w("d2","Fire4");
             }
 
         });
