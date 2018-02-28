@@ -18,10 +18,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        defaultFragment fragment = new defaultFragment();
-        fragmentTransaction.add(R.id.content_frame, fragment);
+        fragmentTransaction.add(R.id.content_frame, new defaultFragment());
         fragmentTransaction.commit();
     }
 }
