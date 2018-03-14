@@ -28,6 +28,84 @@ public class defaultFragment extends Fragment {
             }
 
         });
+        Button mD4Button = (Button) rootView.findViewById(R.id.d4Button);
+        mD2Button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, new d4Fragment());
+                ft.commit();
+            }
+
+        });
+        Button mD6Button = (Button) rootView.findViewById(R.id.d6Button);
+        mD2Button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, new d6Fragment());
+                ft.commit();
+            }
+
+        });
+        Button mD8Button = (Button) rootView.findViewById(R.id.d8Button);
+        mD2Button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, new d8Fragment());
+                ft.commit();
+            }
+
+        });
+        Button mD10Button = (Button) rootView.findViewById(R.id.d10Button);
+        mD2Button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, new d10Fragment());
+                ft.commit();
+            }
+
+        });
+        Button mD12Button = (Button) rootView.findViewById(R.id.d12Button);
+        mD2Button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, new d12Fragment());
+                ft.commit();
+            }
+
+        });
+        Button mD20Button = (Button) rootView.findViewById(R.id.d20Button);
+        mD2Button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, new d20Fragment());
+                ft.commit();
+            }
+
+        });
+        Button mCustomButton = (Button) rootView.findViewById(R.id.customButton);
+        mD2Button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, new dCustomFragment());
+                ft.commit();
+            }
+
+        });
+
         return rootView;
     }
 }
