@@ -34,7 +34,7 @@ public abstract class Die {
 
     public int[] getRolls() {return rolls;}
 
-    public void roll() {
+    public void roll(int r) {
         rolls = new int[this.sides];
         for(int x : rolls){
             rolls[x] = 0;
