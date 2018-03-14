@@ -33,7 +33,7 @@ public class defaultFragment extends Fragment {
 
         });
         Button mD4Button = (Button) rootView.findViewById(R.id.d4Button);
-        mD2Button.setOnClickListener(new View.OnClickListener() {
+        mD4Button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -44,7 +44,7 @@ public class defaultFragment extends Fragment {
 
         });
         Button mD6Button = (Button) rootView.findViewById(R.id.d6Button);
-        mD2Button.setOnClickListener(new View.OnClickListener() {
+        mD6Button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -55,7 +55,7 @@ public class defaultFragment extends Fragment {
 
         });
         Button mD8Button = (Button) rootView.findViewById(R.id.d8Button);
-        mD2Button.setOnClickListener(new View.OnClickListener() {
+        mD8Button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -66,7 +66,7 @@ public class defaultFragment extends Fragment {
 
         });
         Button mD10Button = (Button) rootView.findViewById(R.id.d10Button);
-        mD2Button.setOnClickListener(new View.OnClickListener() {
+        mD10Button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -77,7 +77,7 @@ public class defaultFragment extends Fragment {
 
         });
         Button mD12Button = (Button) rootView.findViewById(R.id.d12Button);
-        mD2Button.setOnClickListener(new View.OnClickListener() {
+        mD12Button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -88,7 +88,7 @@ public class defaultFragment extends Fragment {
 
         });
         Button mD20Button = (Button) rootView.findViewById(R.id.d20Button);
-        mD2Button.setOnClickListener(new View.OnClickListener() {
+        mD20Button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -99,7 +99,7 @@ public class defaultFragment extends Fragment {
 
         });
         Button mCustomButton = (Button) rootView.findViewById(R.id.customButton);
-        mD2Button.setOnClickListener(new View.OnClickListener() {
+        mCustomButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
