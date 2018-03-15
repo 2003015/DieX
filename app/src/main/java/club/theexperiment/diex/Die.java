@@ -40,7 +40,7 @@ public abstract class Die {
             rolls[x] = 0;
         }
 
-        for (int i = 0; i < this.numberOfDice; i++) {
+        for (int i = 0; i < r; i++) {
             int n = rand.nextInt(this.sides) + 1;
             total += n;
             rolls[n-1]++;

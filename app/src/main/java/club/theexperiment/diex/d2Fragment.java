@@ -22,15 +22,14 @@ public class d2Fragment extends Fragment {
         Dice = new d2();
 
         numDice = ((EditText) rootView.findViewById(R.id.d2Rolls)).getText().toString();
-        try{
-            nD = Integer.parseInt(numDice);
-            Dice.setNumberOfDice(nD);
-            Dice.roll(nD);
-            ///
-        }
-        catch (NumberFormatException e){
-            ///
-        }
+
+        nD = Integer.parseInt(numDice);
+        Dice.setNumberOfDice(nD);
+        Dice.roll(nD);
+        /// use .getRolls
+
+
+
 
         return rootView;
     }
