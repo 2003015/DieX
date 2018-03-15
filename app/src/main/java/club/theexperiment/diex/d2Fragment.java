@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class d2Fragment extends Fragment {
@@ -17,15 +18,24 @@ public class d2Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.fragment_d2, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_d2, container, false);
 
         Dice = new d2();
 
-        numDice = ((EditText) rootView.findViewById(R.id.d2Rolls)).getText().toString();
+        Button mD2RollButton = (Button) rootView.findViewById(R.id.customButton);
+        mD2RollButton.setOnClickListener(new View.OnClickListener() {
 
-        nD = Integer.parseInt(numDice);
-        Dice.setNumberOfDice(nD);
-        Dice.roll(nD);
+            @Override
+            public void onClick(View v) {
+                numDice = ((EditText) rootView.findViewById(R.id.d2Rolls)).getText().toString();
+
+                nD = Integer.parseInt(numDice);
+                Dice.setNumberOfDice(nD);
+                Dice.roll(nD);
+            }
+
+        });
+
         /// use .getRolls
 
 
