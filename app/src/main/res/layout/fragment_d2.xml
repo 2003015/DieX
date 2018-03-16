@@ -14,7 +14,7 @@
         tools:text="Enter the number of rolls"/>
 
     <Button
-        android:id="@+id/d2Rolls"
+        android:id="@+id/d2RollButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Roll"/>
