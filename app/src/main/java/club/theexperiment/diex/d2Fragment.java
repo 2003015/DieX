@@ -20,9 +20,10 @@ public class d2Fragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         final View rootView = inflater.inflate(R.layout.fragment_d2, container, false);
 
+
         Dice = new d2();
 
-        Button mD2RollButton = (Button) rootView.findViewById(R.id.customButton);
+        Button mD2RollButton = (Button) rootView.findViewById(R.id.d2RollButton);
         mD2RollButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
