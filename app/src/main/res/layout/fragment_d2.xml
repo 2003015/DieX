@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:inputType="number"
+        android:text="1"
         tools:text="Enter the number of rolls"/>
 
     <Button
@@ -22,5 +23,7 @@
     <ListView
         android:id="@+id/d2ListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        />
+
 </LinearLayout>
