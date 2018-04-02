@@ -43,7 +43,7 @@ public class d2Fragment extends ListFragment {
 
                     //rollStrings[i] = Integer.toString(Dice.getRolls()[i]);
                     rollStrings[i] = Integer.toString(Dice.getRolls()[i]);
-                    Log.e("test", Integer.toString(Dice.getRolls()[i]));
+                    Log.e("test", (i + 1) + "s: " + Integer.toString(Dice.getRolls()[i]));
 
                 }
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String> (getActivity(), R.layout.listview, rollStrings);
