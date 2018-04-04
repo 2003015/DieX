@@ -24,12 +24,13 @@ public class d2Fragment extends ListFragment {
     private Button mD2RollButton;
     private String[] rollStrings;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_d2, container, false);
         mD2RollButton = (Button) rootView.findViewById(R.id.d2RollButton);
-        Dice = new d2();
-        mD2RollButton.setOnClickListener(new View.OnClickListener() {
+        ///////////////////////////
+        View.OnClickListener run = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 numDice = ((EditText) rootView.findViewById(R.id.d2Rolls)).getText().toString();
@@ -49,8 +50,10 @@ public class d2Fragment extends ListFragment {
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String> (getActivity(), R.layout.listview, rollStrings);
                 setListAdapter(arrayAdapter);
             }
-
-        });
+        };
+/////////////////////////////////////
+        Dice = new d2();
+        mD2RollButton.setOnClickListener(run);
         return rootView;
 
     }
