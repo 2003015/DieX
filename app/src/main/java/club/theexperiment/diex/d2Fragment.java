@@ -38,12 +38,12 @@ public class d2Fragment extends ListFragment {
                 Dice.setNumberOfDice(nD);
                 Dice.roll(nD);
                 rollStrings = new String[Dice.getRolls().length];
-                //String[] rollStrings = new String[Dice.getRolls().length];
+
                 for (int i = 0; i < Dice.getRolls().length; i++) {
 
-                    //rollStrings[i] = Integer.toString(Dice.getRolls()[i]);
-                    rollStrings[i] = Integer.toString(Dice.getRolls()[i]);
-                    Log.e("test", Integer.toString(Dice.getRolls()[i]));
+
+                    rollStrings[i] = (i + 1) + "s: " + Integer.toString(Dice.getRolls()[i]);
+
 
                 }
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String> (getActivity(), R.layout.listview, rollStrings);
