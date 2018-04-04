@@ -10,21 +10,21 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-public class d2Fragment extends ListFragment {
+public class dFragment extends ListFragment {
 
     private String numDice;
     private int nD;
-    private Button mD2RollButton;
+    private Button mDRollButton;
     private String[] rollStrings;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.fragment_d2, container, false);
-        mD2RollButton = (Button) rootView.findViewById(R.id.d2RollButton);
-        mD2RollButton.setOnClickListener(new View.OnClickListener() {
+        final View rootView = inflater.inflate(R.layout.fragment_d, container, false);
+        mDRollButton = (Button) rootView.findViewById(R.id.dRollButton);
+        mDRollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                numDice = ((EditText) rootView.findViewById(R.id.d2Rolls)).getText().toString();
+                numDice = ((EditText) rootView.findViewById(R.id.dRolls)).getText().toString();
 
                 nD = Integer.parseInt(numDice);
                 MainActivity.dice.setNumberOfDice(nD);
