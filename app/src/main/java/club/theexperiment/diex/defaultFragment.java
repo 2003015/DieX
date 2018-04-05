@@ -19,9 +19,10 @@ public class defaultFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                MainActivity.dice = new d2();
+                MainActivity.dice = new dPreset();
+                MainActivity.dice.setSides(2);
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame, new dFragment());
+                ft.replace(R.id.content_frame, new dPresetFragment());
                 ft.commit();
             }
 
@@ -31,8 +32,10 @@ public class defaultFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                MainActivity.dice = new dPreset();
+                MainActivity.dice.setSides(4);
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame, new d4Fragment());
+                ft.replace(R.id.content_frame, new dPresetFragment());
                 ft.commit();
             }
 
@@ -42,8 +45,10 @@ public class defaultFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                MainActivity.dice = new dPreset();
+                MainActivity.dice.setSides(6);
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame, new d6Fragment());
+                ft.replace(R.id.content_frame, new dPresetFragment());
                 ft.commit();
             }
 
@@ -53,8 +58,10 @@ public class defaultFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                MainActivity.dice = new dPreset();
+                MainActivity.dice.setSides(8);
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame, new d8Fragment());
+                ft.replace(R.id.content_frame, new dPresetFragment());
                 ft.commit();
             }
 
@@ -64,8 +71,10 @@ public class defaultFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                MainActivity.dice = new dPreset();
+                MainActivity.dice.setSides(10);
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame, new d10Fragment());
+                ft.replace(R.id.content_frame, new dPresetFragment());
                 ft.commit();
             }
 
@@ -75,8 +84,10 @@ public class defaultFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                MainActivity.dice = new dPreset();
+                MainActivity.dice.setSides(12);
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame, new d12Fragment());
+                ft.replace(R.id.content_frame, new dPresetFragment());
                 ft.commit();
             }
 
@@ -86,8 +97,10 @@ public class defaultFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                MainActivity.dice = new dPreset();
+                MainActivity.dice.setSides(20);
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame, new d20Fragment());
+                ft.replace(R.id.content_frame, new dPresetFragment());
                 ft.commit();
             }
 
