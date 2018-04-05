@@ -11,7 +11,7 @@ import android.widget.EditText;
 
 
 public class dPresetFragment extends ListFragment {
-
+    //Declare variables
     private String numDice;
     private int nD;
     private Button mDPresetRollButton;
@@ -19,18 +19,24 @@ public class dPresetFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //Link Views and Buttons
         final View rootView = inflater.inflate(R.layout.fragment_dpreset, container, false);
         mDPresetRollButton = (Button) rootView.findViewById(R.id.dPresetRollButton);
+        //Set method for when roll button clicked
         mDPresetRollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Link textbox for number of sides
                 numDice = ((EditText) rootView.findViewById(R.id.dPresetRolls)).getText().toString();
-
+                //Parse number of sides in textbox
                 nD = Integer.parseInt(numDice);
+                //Set sides to specified number of sides
                 MainActivity.dice.setNumberOfDice(nD);
+                //Roll dice for roll array
                 MainActivity.dice.roll(nD);
+                //Create new array to store string versions of roll ints
                 rollStrings = new String[MainActivity.dice.getRolls().length];
-
+                //Create array strings specifying how many times each side was rolled
                 for (int i = 0; i < MainActivity.dice.getRolls().length; i++) {
 
 
@@ -38,7 +44,9 @@ public class dPresetFragment extends ListFragment {
 
 
                 }
+                //Create Array adapter to display String array
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<> (getActivity(), R.layout.listview, rollStrings);
+                //Display String array
                 setListAdapter(arrayAdapter);
             }
 

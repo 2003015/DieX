@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 
 public class dCustomFragment extends Fragment {
 
-    private static final String TAG = "ProfileFragment";
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
