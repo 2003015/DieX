@@ -16,6 +16,7 @@ public class dPresetFragment extends ListFragment {
     private int nD;
     private Button mDPresetRollButton;
     private String[] rollStrings;
+    private int sum;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -26,6 +27,8 @@ public class dPresetFragment extends ListFragment {
         mDPresetRollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Reset sum to 0
+                sum = 0;
                 //Link textbox for number of sides
                 numDice = ((EditText) rootView.findViewById(R.id.dPresetRolls)).getText().toString();
                 //Parse number of sides in textbox
@@ -35,15 +38,13 @@ public class dPresetFragment extends ListFragment {
                 //Roll dice for roll array
                 MainActivity.dice.roll(nD);
                 //Create new array to store string versions of roll ints
-                rollStrings = new String[MainActivity.dice.getRolls().length];
-                //Create array strings specifying how many times each side was rolled
+                rollStrings = new String[MainActivity.dice.getRolls().length+1];
+                //Create array strings specifying how many times each side was rolled and add sum
                 for (int i = 0; i < MainActivity.dice.getRolls().length; i++) {
-
-
                     rollStrings[i] = (i + 1) + "s: " + Integer.toString(MainActivity.dice.getRolls()[i]);
-
-
+                    sum += (i+1)*MainActivity.dice.getRolls()[i];
                 }
+                rollStrings[rollStrings.length-1] = "Sum: " + Integer.toString(sum);
                 //Create Array adapter to display String array
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<> (getActivity(), R.layout.listview, rollStrings);
                 //Display String array
