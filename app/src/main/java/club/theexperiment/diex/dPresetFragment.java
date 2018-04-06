@@ -1,5 +1,6 @@
 package club.theexperiment.diex;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.VideoView;
 
 
 public class dPresetFragment extends ListFragment {
@@ -22,8 +24,18 @@ public class dPresetFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        VideoView videoView;
+        Uri uri;
+
         //Link Views and Buttons
         final View rootView = inflater.inflate(R.layout.fragment_dpreset, container, false);
+
+        videoView = (VideoView) rootView.findViewById(R.id.video_view);
+
+        uri = Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.raw.d1_dice);
+        videoView.setVideoURI(uri);
+
         mDPresetRollButton = (Button) rootView.findViewById(R.id.dPresetRollButton);
         //Set method for when roll button clicked
         mDPresetRollButton.setOnClickListener(new View.OnClickListener() {
