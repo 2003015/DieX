@@ -1,6 +1,7 @@
 package club.theexperiment.diex;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ public class dPresetFragment extends ListFragment {
     private String numDice;
     private int nD;
     private Button mDPresetRollButton;
+    private Button mPresetBackButton;
     private String[] rollStrings;
     private int sum;
 
@@ -44,6 +46,7 @@ public class dPresetFragment extends ListFragment {
                     rollStrings[i] = (i + 1) + "s: " + Integer.toString(MainActivity.dice.getRolls()[i]);
                     sum += (i+1)*MainActivity.dice.getRolls()[i];
                 }
+                //Add sum String to array
                 rollStrings[rollStrings.length-1] = "Sum: " + Integer.toString(sum);
                 //Create Array adapter to display String array
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<> (getActivity(), R.layout.listview, rollStrings);
@@ -51,6 +54,18 @@ public class dPresetFragment extends ListFragment {
                 setListAdapter(arrayAdapter);
             }
 
+        });
+        //Create back button
+        mPresetBackButton = (Button) rootView.findViewById(R.id.presetBackButton);
+        //Set method for back button click
+        mPresetBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Load menu fragment
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, new defaultFragment());
+                ft.commit();
+            }
         });
         return rootView;
 
