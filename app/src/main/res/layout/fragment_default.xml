@@ -20,6 +20,7 @@
             android:layout_weight="1"
             android:text="D2"/>
 
+
         <Button
             android:id="@+id/d4Button"
             android:layout_width="wrap_content"
