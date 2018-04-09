@@ -26,7 +26,6 @@ public class defaultFragment extends Fragment {
 
         uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.d1_dice);
         videoView.setVideoURI(uri);
-
         mD2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
