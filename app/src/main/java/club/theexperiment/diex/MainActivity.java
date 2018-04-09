@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        VideoView videoView;
-        Uri uri;
 
         //Load fragment_default onto screen
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -31,10 +29,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.add(R.id.content_frame, new defaultFragment());
         fragmentTransaction.commit();
 
-           videoView = (VideoView) findViewById(R.id.video_view);
-
-            uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.d1_dice);
-            videoView.setVideoURI(uri);
 
     }
 }

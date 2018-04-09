@@ -7,9 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.view.View;
+import android.widget.Button;
+import android.widget.VideoView;
+import android.net.Uri;
+
 
 public class defaultFragment extends Fragment {
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
@@ -17,12 +21,18 @@ public class defaultFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_default, container, false);
         Button mD2Button = (Button) rootView.findViewById(R.id.d2Button);
         //Create method to execute on button press
-        mD2Button.setOnClickListener(new View.OnClickListener() {
+        Uri uri;
+        final VideoView videoView = (VideoView) getView().findViewById(R.id.video_view);
 
+        uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.d1_dice);
+        videoView.setVideoURI(uri);
+
+        mD2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Set Die instance to a Preset with specified number of sides
                 MainActivity.dice = new dPreset(2);
+                videoView.start();
                 //Load rolling screen fragment
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.content_frame, new dPresetFragment());
