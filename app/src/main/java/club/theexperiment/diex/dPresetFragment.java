@@ -25,15 +25,14 @@ public class dPresetFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        VideoView videoView;
         Uri uri;
 
         //Link Views and Buttons
         final View rootView = inflater.inflate(R.layout.fragment_dpreset, container, false);
 
-        videoView = (VideoView) rootView.findViewById(R.id.video_view);
+        final VideoView videoView = (VideoView) rootView.findViewById(R.id.video_view);
 
-        uri = Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.raw.d1_dice);
+        uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.d1_dice);
         videoView.setVideoURI(uri);
 
         mDPresetRollButton = (Button) rootView.findViewById(R.id.dPresetRollButton);
@@ -41,6 +40,7 @@ public class dPresetFragment extends ListFragment {
         mDPresetRollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                videoView.start();
                 //Reset sum to 0
                 sum = 0;
                 //Link textbox for number of sides
