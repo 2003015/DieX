@@ -58,7 +58,7 @@ public class dPresetFragment extends ListFragment {
                     rollStrings[i] = (i + 1) + "s: " + Integer.toString(MainActivity.dice.getRolls()[i]);
                     sum += (i+1)*MainActivity.dice.getRolls()[i];
                 }
-                //Add sum String to array
+                //Add sum String to array//
                 rollStrings[rollStrings.length-1] = "Sum: " + Integer.toString(sum);
                 //Create Array adapter to display String array
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<> (getActivity(), R.layout.listview, rollStrings);
