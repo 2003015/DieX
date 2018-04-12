@@ -48,7 +48,7 @@ public class dCustomFragment extends ListFragment {
                 //Link textbox for number of sides
                 numDice = ((EditText) rootView.findViewById(R.id.dCustomRolls)).getText().toString();
                 numSides = ((EditText) rootView.findViewById(R.id.dCustomSides)).getText().toString();
-                if (numDice == "" || numSides == "") {}
+                if (numDice.equals("") || numSides.equals("")) {}
                 else {
                     //Parse number of sides in textbox
                     nD = Integer.parseInt(numDice);

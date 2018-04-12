@@ -46,7 +46,7 @@ public class dPresetFragment extends ListFragment {
                 //Link textbox for number of sides
                 numDice = ((EditText) rootView.findViewById(R.id.dPresetRolls)).getText().toString();
                 //Parse number of sides in textbox
-                if (numDice == ""){}
+                if (numDice.equals("")){}
                 else {
                     nD = Integer.parseInt(numDice);
 
