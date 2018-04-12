@@ -50,7 +50,7 @@ public class dPresetFragment extends ListFragment {
                 //Set sides to specified number of sides
                 MainActivity.dice.setNumberOfDice(nD);
                 //Roll dice for roll array
-                MainActivity.dice.roll(nD);
+                MainActivity.dice.roll();
                 //Create new array to store string versions of roll ints
                 rollStrings = new String[MainActivity.dice.getRolls().length+1];
                 //Create array strings specifying how many times each side was rolled and add sum

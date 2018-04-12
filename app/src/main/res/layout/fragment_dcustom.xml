@@ -16,16 +16,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:inputType="number"
-        tools:text="Enter the number of rolls"/>
+        android:hint="Enter the number of rolls"
+        android:inputType="number"/>
 
     <EditText
         android:id="@+id/dCustomSides"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="number"
-        tools:text="Enter the number of sides"/>
+        android:hint="Enter the number of sides"
+        android:inputType="number"/>
 
     <Button
         android:id="@+id/dCustomRollButton"

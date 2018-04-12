@@ -41,11 +41,23 @@ public abstract class Die {
 
     public void roll(int r) {
         rolls = new int[this.sides];
-        for(int x : rolls){
+        for (int x : rolls) {
             rolls[x] = 0;
         }
 
         for (int i = 0; i < r; i++) {
+            int n = rand.nextInt(this.sides) + 1;
+            total += n;
+            rolls[n - 1]++;
+        }
+    }
+    public void roll() {
+        rolls = new int[this.sides];
+        for(int x : rolls){
+            rolls[x] = 0;
+        }
+
+        for (int i = 0; i < this.getNumberOfDice(); i++) {
             int n = rand.nextInt(this.sides) + 1;
             total += n;
             rolls[n-1]++;

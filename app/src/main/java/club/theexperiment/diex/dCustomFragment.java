@@ -2,7 +2,7 @@ package club.theexperiment.diex;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.VideoView;
 
-public class dCustomFragment extends Fragment {
+public class dCustomFragment extends ListFragment {
     private String numDice;
     private String numSides;
     private int nD;
@@ -54,7 +54,7 @@ public class dCustomFragment extends Fragment {
                 //Set sides to specified number of sides
                 MainActivity.dice = new dCustom(nD,nS);
                 //Roll dice for roll array
-                MainActivity.dice.roll(nD);
+                MainActivity.dice.roll();
                 //Create new array to store string versions of roll ints
                 rollStrings = new String[MainActivity.dice.getRolls().length+1];
                 //Create array strings specifying how many times each side was rolled and add sum
