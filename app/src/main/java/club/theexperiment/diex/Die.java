@@ -1,5 +1,7 @@
 package club.theexperiment.diex;
 
+import android.net.Uri;
+
 import java.util.Random;
 
 public abstract class Die {
@@ -9,11 +11,13 @@ public abstract class Die {
     private Random rand = new Random();
     private int total;
     private int[] rolls;
+    private Uri[] uriList;
     //Create constructor
     public Die() {
         sides = 0;
         numberOfDice = 0;
     }
+
 
     //Getters and Setters
 
@@ -36,6 +40,10 @@ public abstract class Die {
     public int getTotal() {return total;}
 
     public int[] getRolls() {return rolls;}
+
+    public void setUriList(Uri[] uriList) {this.uriList = uriList;}
+
+    public Uri getUri(int roll) {return uriList[roll];}
 
     //Generate array of random ints when rolled
 

@@ -2,6 +2,7 @@ package club.theexperiment.diex;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity {
     //Create Die instance to use for rolls
     public static Die dice;
+    public Uri uri;
     //Override onCreate method
     @Override
     protected void onCreate(Bundle savedInstanceState) {
