@@ -15,6 +15,6 @@ public class BotBoi {
         store = new int[][]{{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0}};
     }
 
-    public void sto
+    //public void sto
 
 }
