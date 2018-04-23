@@ -5,7 +5,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -20,12 +23,15 @@ public class dPresetFragment extends ListFragment {
     private String numDice;
     private int nD;
     private Button mDPresetRollButton;
-    private Button mPresetBackButton;
     private String[] rollStrings;
     private int sum;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
         Uri uri;
 
@@ -34,7 +40,8 @@ public class dPresetFragment extends ListFragment {
 
         final VideoView videoView = (VideoView) rootView.findViewById(R.id.video_view);
 
-        uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.d1_dice);
+        uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.d6_1);
+
         videoView.setVideoURI(uri);
 
         mDPresetRollButton = (Button) rootView.findViewById(R.id.dPresetRollButton);
@@ -79,18 +86,6 @@ public class dPresetFragment extends ListFragment {
                 }
             }
 
-        });
-        //Create back button
-        mPresetBackButton = (Button) rootView.findViewById(R.id.presetBackButton);
-        //Set method for back button click
-        mPresetBackButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Load menu fragment
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame, new defaultFragment());
-                ft.commit();
-            }
         });
         return rootView;
 

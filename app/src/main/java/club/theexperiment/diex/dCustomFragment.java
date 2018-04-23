@@ -5,7 +5,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -20,13 +22,21 @@ public class dCustomFragment extends ListFragment {
     private int nD;
     private int nS;
     private Button mDCustomRollButton;
-    private Button mCustomBackButton;
     private String[] rollStrings;
     private int sum;
 
 
+    public boolean onOptionsItemSelected(MenuItem item){
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.content_frame, new defaultFragment());
+        ft.commit();
+        return true;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Uri uri;
 
@@ -35,7 +45,7 @@ public class dCustomFragment extends ListFragment {
 
         final VideoView videoView = (VideoView) rootView.findViewById(R.id.video_view);
 
-        uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.d1_dice);
+        uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.d6_1);
         videoView.setVideoURI(uri);
 
         mDCustomRollButton = (Button) rootView.findViewById(R.id.dCustomRollButton);
@@ -83,20 +93,7 @@ public class dCustomFragment extends ListFragment {
             }
 
         });
-        //Create back button
-        mCustomBackButton = (Button) rootView.findViewById(R.id.CustomBackButton);
-        //Set method for back button click
-        mCustomBackButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Load menu fragment
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame, new defaultFragment());
-                ft.commit();
-            }
-        });
         return rootView;
 
     }
-
 }
