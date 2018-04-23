@@ -8,13 +8,13 @@ import java.util.List;
 
 public class BotBoi {
 
-    private int[][] store; //option, sides, usual amount rolled
+    private int[][] store; //sides, usual amount rolled
     private List nums;
 
     public BotBoi(){
-        store = new int[][]{{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0}};
+        store = new int[][]{{2,0},{4,0},{6,0},{8,0},{10,0},{12,0},{20,0},{0,0}};
     }
 
-    //public void sto
+    //public void
 
 }
