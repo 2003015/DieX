@@ -8,7 +8,7 @@ import java.util.List;
 
 public class BotBoi {
 
-    private int[][] store;
+    private int[][] store; //option, sides, usual amount rolled
     private List nums;
 
     public BotBoi(){
