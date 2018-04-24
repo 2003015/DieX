@@ -18,6 +18,7 @@ public class defaultFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        //Hide back button
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         super.onCreateView(inflater, container, savedInstanceState);
@@ -25,11 +26,6 @@ public class defaultFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_default, container, false);
         Button mD2Button = (Button) rootView.findViewById(R.id.d2Button);
         //Create method to execute on button press
-        //Uri uri;
-        //final VideoView videoView = (VideoView) getView().findViewById(R.id.video_view);
-
-        //uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.d1_dice);
-        //videoView.setVideoURI(uri);
         mD2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
