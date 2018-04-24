@@ -26,6 +26,7 @@ public class dCustomFragment extends ListFragment {
     private int sum;
 
 
+
     public boolean onOptionsItemSelected(MenuItem item){
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.replace(R.id.content_frame, new defaultFragment());

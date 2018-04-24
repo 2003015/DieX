@@ -13,6 +13,7 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity {
     //Create Die instance to use for rolls
     public static Die dice;
+    public static String PACKAGE_NAME;
     public Uri uri;
 
     //Override onCreate method
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.content_frame, new defaultFragment());
         fragmentTransaction.commit();
+        PACKAGE_NAME = getApplicationContext().getPackageName();
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
