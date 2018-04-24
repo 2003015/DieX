@@ -75,7 +75,8 @@ public class dCustomFragment extends ListFragment {
                     //Create Array adapter to display String array
                     ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity(), R.layout.listview, rollStrings);
                     //Display String array
-                    setListAdapter(arrayAdapter);//Hide Keyboard
+                    setListAdapter(arrayAdapter);
+                    //Hide Keyboard
                     InputMethodManager inputManager = (InputMethodManager)
                             getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
 
