@@ -3,12 +3,9 @@ package club.theexperiment.diex;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -29,9 +26,8 @@ public class dPresetFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        //Show back button
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
 
         Uri uri;
 
@@ -40,11 +36,12 @@ public class dPresetFragment extends ListFragment {
 
         final VideoView videoView = (VideoView) rootView.findViewById(R.id.video_view);
 
-        uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.d6_1);
+        mDPresetRollButton = (Button) rootView.findViewById(R.id.dPresetRollButton);
 
+        //Set location of video to play
+        uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.d6_1);
         videoView.setVideoURI(uri);
 
-        mDPresetRollButton = (Button) rootView.findViewById(R.id.dPresetRollButton);
         //Set method for when roll button clicked
         mDPresetRollButton.setOnClickListener(new View.OnClickListener() {
             @Override

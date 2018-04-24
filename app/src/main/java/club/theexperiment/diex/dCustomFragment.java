@@ -4,10 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -25,17 +23,10 @@ public class dCustomFragment extends ListFragment {
     private String[] rollStrings;
     private int sum;
 
-
-    public boolean onOptionsItemSelected(MenuItem item){
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.content_frame, new defaultFragment());
-        ft.commit();
-        return true;
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        //Show back button
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Uri uri;
@@ -45,10 +36,12 @@ public class dCustomFragment extends ListFragment {
 
         final VideoView videoView = (VideoView) rootView.findViewById(R.id.video_view);
 
+        mDCustomRollButton = (Button) rootView.findViewById(R.id.dCustomRollButton);
+
+        //Set location of video to play
         uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.d6_1);
         videoView.setVideoURI(uri);
 
-        mDCustomRollButton = (Button) rootView.findViewById(R.id.dCustomRollButton);
         //Set method for when roll button clicked
         mDCustomRollButton.setOnClickListener(new View.OnClickListener() {
             @Override
