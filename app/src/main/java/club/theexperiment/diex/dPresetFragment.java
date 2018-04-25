@@ -39,8 +39,8 @@ public class dPresetFragment extends ListFragment {
         mDPresetRollButton = (Button) rootView.findViewById(R.id.dPresetRollButton);
 
         //Set location of video to play
-        uri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.d6_1);
-        videoView.setVideoURI(uri);
+
+
 
         //Set method for when roll button clicked
         mDPresetRollButton.setOnClickListener(new View.OnClickListener() {
@@ -58,9 +58,13 @@ public class dPresetFragment extends ListFragment {
 
                     //Set sides to specified number of sides
                     MainActivity.dice.setNumberOfDice(nD);
+                    MainActivity.dice.roll();
+                    //Uri dumbUri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/"+ R.raw.d6_1);
+                    Uri uri = MainActivity.dice.getUri(MainActivity.dice.getFirstRoll());
+                    videoView.setVideoURI(uri);
                     //Roll dice for roll array
                     videoView.start();
-                    MainActivity.dice.roll();
+
                     //Create new array to store string versions of roll ints
                     rollStrings = new String[MainActivity.dice.getRolls().length + 1];
                     //Create array strings specifying how many times each side was rolled and add sum
