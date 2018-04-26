@@ -1,11 +1,16 @@
 package club.theexperiment.diex;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -13,6 +18,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.VideoView;
+
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.ValueDependentColor;
+import com.jjoe64.graphview.series.BarGraphSeries;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 
 public class dPresetFragment extends ListFragment {
@@ -64,6 +75,40 @@ public class dPresetFragment extends ListFragment {
                     videoView.setVideoURI(uri);
                     //Roll dice for roll array
                     videoView.start();
+                    MainActivity.dice.roll();
+
+
+                    GraphView graph = (GraphView) rootView.findViewById(R.id.graph);  //Graph
+
+                    DataPoint[] points = new DataPoint[MainActivity.dice.getRolls().length];
+
+                    for (int i = 0; i < MainActivity.dice.getRolls().length;i++) {
+                        points[i] = new DataPoint(i, MainActivity.dice.getRolls()[i]);
+                    }
+
+                    BarGraphSeries<DataPoint> series = new BarGraphSeries<>(points);
+                    graph.addSeries(series);
+
+                    // styling
+                    series.setValueDependentColor(new ValueDependentColor<DataPoint>() {
+                        @Override
+                        public int get(DataPoint data) {
+                            if (data.getX() % 2 == 0) {
+                                return Color.rgb(0, 0, 255);
+                            } else {
+                                return Color.rgb(0,0, 100);
+                            }
+                        }
+
+
+                    });
+
+                    series.setSpacing(50);
+
+// draw values on top
+                    series.setDrawValuesOnTop(true);
+                    series.setValuesOnTopColor(Color.BLACK);
+
 
                     //Create new array to store string versions of roll ints
                     rollStrings = new String[MainActivity.dice.getRolls().length + 1];
