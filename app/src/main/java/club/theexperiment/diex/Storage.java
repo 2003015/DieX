@@ -7,16 +7,16 @@ import java.util.List;
  * Created by 1806357 on 4/20/2018.
  */
 
-public class BotBoi {
+public class Storage {
 
-    private int[][] store; //sides, usual amount rolled
+    //private int[][] store; //sides, usual amount rolled
     private List<Integer> usNumRolls1 = new ArrayList<>();
     private int[] usNumRollsTop1;
     private boolean changed1;
 
 
-    public BotBoi(){
-        store = new int[][]{{2,0},{4,0},{6,0},{8,0},{10,0},{12,0},{20,0},{0,0}};
+    public Storage(){
+        //store = new int[][]{{2,0},{4,0},{6,0},{8,0},{10,0},{12,0},{20,0},{0,0}};
         usNumRollsTop1 = new int[]{0,0,0};
         changed1 = true;
     }
