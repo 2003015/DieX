@@ -6,8 +6,23 @@ package club.theexperiment.diex;
 
 public class Gaem {
 
-
+    private Weapon wep;
+    private int health;
     public Gaem() {
-
+        this.wep = new Weapon(1,2);
+        this.health = 100;
     }
+
+    public boolean Damage(int a){
+        this.health -= a;
+        return this.health <= 0;
+    }
+
+    public int Attack(){
+        MainActivity.dice.setSides(wep.getD());
+        MainActivity.dice.setNumberOfDice(wep.getN());
+        MainActivity.dice.roll();
+        return MainActivity.dice.getTotal();
+    }
+
 }
