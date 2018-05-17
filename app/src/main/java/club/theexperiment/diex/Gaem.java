@@ -9,7 +9,7 @@ public class Gaem {
     private Weapon wep;
     private int health;
     public Gaem() {
-        this.wep = new Weapon(1,2);
+        this.wep = new Weapon(1,3);
         this.health = 100;
     }
 
@@ -25,4 +25,19 @@ public class Gaem {
         return MainActivity.dice.getTotal();
     }
 
+    public Weapon getWep() {
+        return wep;
+    }
+
+    public void setWep(Weapon wep) {
+        this.wep = wep;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
 }

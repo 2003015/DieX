@@ -14,6 +14,12 @@ public class Enemy {
         this.health = h;
     }
 
+    public Enemy(){
+        this.D = 1;
+        this.N = 2;
+        this.health = 20;
+    }
+
     public boolean Damage(int a){
         this.health -= a;
         return this.health <= 0;
@@ -26,4 +32,27 @@ public class Enemy {
         return MainActivity.dice.getTotal();
     }
 
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getD() {
+        return D;
+    }
+
+    public void setD(int d) {
+        D = d;
+    }
+
+    public int getN() {
+        return N;
+    }
+
+    public void setN(int n) {
+        N = n;
+    }
 }
