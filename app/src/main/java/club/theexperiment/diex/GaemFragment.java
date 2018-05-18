@@ -60,7 +60,7 @@ public class GaemFragment extends Fragment {
         hP.setText(gaem.getStrHealth());
         wP.setText(gaem.getStrWep());
         hE.setText(enm.getStrHealth());
-        wP.setText(enm.getStrWep());
+        wE.setText(enm.getStrWep());
         a = "An enemy approaches!";
         log.setText(a);
 
