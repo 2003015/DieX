@@ -8,9 +8,11 @@ public class Gaem {
 
     private Weapon wep;
     private int health;
+    private dPreset die;
     public Gaem() {
-        this.wep = new Weapon(1,3);
+        this.wep = new Weapon(3,1);
         this.health = 100;
+        die = new dPreset(wep.getD());
     }
 
     public boolean Damage(int a){
@@ -19,10 +21,10 @@ public class Gaem {
     }
 
     public int Attack(){
-        MainActivity.dice.setSides(wep.getD());
-        MainActivity.dice.setNumberOfDice(wep.getN());
-        MainActivity.dice.roll();
-        return MainActivity.dice.getTotal();
+
+        die.setNumberOfDice(wep.getN());
+        die.roll();
+        return die.getTotal();
     }
 
     public Weapon getWep() {
@@ -39,5 +41,12 @@ public class Gaem {
 
     public void setHealth(int health) {
         this.health = health;
+    }
+
+    public String getStrHealth(){
+        return "Health: " + health;
+    }
+    public String getStrWep(){
+        return "Weapon: " + wep.getN() + " d" + wep.getD();
     }
 }

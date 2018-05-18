@@ -8,16 +8,19 @@ public class Enemy {
     private int health;
     private int D;
     private int N;
+    private dPreset die;
     public Enemy(int d, int n, int h){
         this.D = d;
         this.N = n;
         this.health = h;
+        die = new dPreset(this.D);
     }
 
     public Enemy(){
         this.D = 1;
         this.N = 2;
         this.health = 20;
+        die = new dPreset(this.D);
     }
 
     public boolean Damage(int a){
@@ -26,10 +29,10 @@ public class Enemy {
     }
 
     public int Attack(){
-        MainActivity.dice.setSides(this.D);
-        MainActivity.dice.setNumberOfDice(this.N);
-        MainActivity.dice.roll();
-        return MainActivity.dice.getTotal();
+
+        die.setNumberOfDice(this.N);
+        die.roll();
+        return die.getTotal();
     }
 
     public int getHealth() {
@@ -54,5 +57,12 @@ public class Enemy {
 
     public void setN(int n) {
         N = n;
+    }
+
+    public String getStrHealth(){
+        return "Health: " + health;
+    }
+    public String getStrWep(){
+        return "Weapon: " + N + " d" + D;
     }
 }

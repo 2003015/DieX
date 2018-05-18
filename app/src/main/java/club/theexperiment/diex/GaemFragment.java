@@ -24,7 +24,8 @@ import android.widget.VideoView;
 public class GaemFragment extends Fragment {
 
     Button attack;
-    Gaem gaem;
+    private Gaem gaem;
+    String a;
     Enemy enm;
     TextView hP, wP, hE, wE, log;
 
@@ -43,27 +44,46 @@ public class GaemFragment extends Fragment {
 
 
         //Link Views and Buttons
-        final View rootView = inflater.inflate(R.layout.fragment_dcustom, container, false);
+        final View rootView = inflater.inflate(R.layout.gaem, container, false);
+        gaem = new Gaem();
+        enm = new Enemy();
+
 
         hP = (TextView) rootView.findViewById(R.id.hP);
         wP = (TextView) rootView.findViewById(R.id.wP);
         hE = (TextView) rootView.findViewById(R.id.hE);
         wE = (TextView) rootView.findViewById(R.id.wE);
+        log = (TextView) rootView.findViewById(R.id.log);
 
-        hP.setText("Health: " + gaem.getHealth());
-        wP.setText("Weapon:" + gaem.getWep().getN() + " d" + gaem.getWep().getD());
-        hE.setText("Health: " + enm.getHealth());
-        wP.setText("Weapon:" + enm.getN() + " d" + enm.getD());
 
-        attack = (Button) rootView.findViewById(R.id.dCustomRollButton);
+
+        hP.setText(gaem.getStrHealth());
+        wP.setText(gaem.getStrWep());
+        hE.setText(enm.getStrHealth());
+        wP.setText(enm.getStrWep());
+        a = "An enemy approaches!";
+        log.setText(a);
+
+        attack = (Button) rootView.findViewById(R.id.att);
         //Set method for when roll button clicked
         attack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                enm.Damage(gaem.Attack());
-                gaem.Damage(enm.Attack());
-                hP.setText("Health: " + gaem.getHealth());
-                hE.setText("Health: " + enm.getHealth());
+                if (gaem.getHealth() <= 0){
+                    a = "You have been slain.";
+                    log.setText(a);
+                }
+                else if(enm.Damage(gaem.Attack())){
+                    a = "Good job, you have slain your foe, but a new one approaches!";
+                    log.setText(a);
+                    enm.setHealth(40);
+                }
+                else if(gaem.Damage(enm.Attack())){
+                    a = "The enemy has killed you.";
+                    log.setText(a);
+                }
+                hP.setText(gaem.getStrHealth());
+                hE.setText(enm.getStrHealth());
             }
 
         });
