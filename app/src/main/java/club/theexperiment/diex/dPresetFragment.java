@@ -31,6 +31,7 @@ public class dPresetFragment extends ListFragment {
     private String numDice;
     private int nD;
     private Button mDPresetRollButton;
+    private Button graphButton;
     private String[] rollStrings;
     private int sum;
 
@@ -48,6 +49,8 @@ public class dPresetFragment extends ListFragment {
         final VideoView videoView = (VideoView) rootView.findViewById(R.id.video_view);
 
         mDPresetRollButton = (Button) rootView.findViewById(R.id.dPresetRollButton);
+
+        graphButton = (Button) rootView.findViewById(R.id.graphButton);
 
         //Set location of video to play
 
@@ -78,38 +81,6 @@ public class dPresetFragment extends ListFragment {
                     MainActivity.dice.roll();
 
 
-                    GraphView graph = (GraphView) rootView.findViewById(R.id.graph);  //Graph
-
-                    DataPoint[] points = new DataPoint[MainActivity.dice.getRolls().length];
-
-                    for (int i = 0; i < MainActivity.dice.getRolls().length;i++) {
-                        points[i] = new DataPoint(i, MainActivity.dice.getRolls()[i]);
-                    }
-
-                    BarGraphSeries<DataPoint> series = new BarGraphSeries<>(points);
-                    graph.addSeries(series);
-
-                    // styling
-                    series.setValueDependentColor(new ValueDependentColor<DataPoint>() {
-                        @Override
-                        public int get(DataPoint data) {
-                            if (data.getX() % 2 == 0) {
-                                return Color.rgb(0, 0, 255);
-                            } else {
-                                return Color.rgb(0,0, 100);
-                            }
-                        }
-
-
-                    });
-
-                    series.setSpacing(50);
-
-// draw values on top
-                    series.setDrawValuesOnTop(true);
-                    series.setValuesOnTopColor(Color.BLACK);
-
-
                     //Create new array to store string versions of roll ints
                     rollStrings = new String[MainActivity.dice.getRolls().length + 1];
                     //Create array strings specifying how many times each side was rolled and add sum
@@ -129,6 +100,19 @@ public class dPresetFragment extends ListFragment {
 
                     inputManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(),
                             InputMethodManager.HIDE_NOT_ALWAYS);
+
+
+                    //Create method to execute on button press
+                    graphButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            FragmentTransaction ft = getFragmentManager().beginTransaction();
+                            ft.replace(R.id.content_frame, new graphFragment());
+                            ft.commit();
+                        }
+
+                    });
                 }
             }
 
@@ -136,4 +120,6 @@ public class dPresetFragment extends ListFragment {
         return rootView;
 
     }
+
+
 }
