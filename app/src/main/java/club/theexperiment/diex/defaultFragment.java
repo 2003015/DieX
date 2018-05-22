@@ -111,6 +111,17 @@ public class defaultFragment extends Fragment {
             }
 
         });
+        Button Gaem = (Button) rootView.findViewById(R.id.gaem);
+        Gaem.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, new GaemFragment());
+                ft.commit();
+            }
+
+        });
         Button mCustomButton = (Button) rootView.findViewById(R.id.customButton);
         mCustomButton.setOnClickListener(new View.OnClickListener() {
 
